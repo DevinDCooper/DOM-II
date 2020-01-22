@@ -7,6 +7,7 @@ mapImage.addEventListener('mouseenter', () => {
 });
 
 
+
 // we can also use (event) inside the parameters => event.style...
 
 //mouseleave 
@@ -15,18 +16,67 @@ mapImage.addEventListener('mouseleave',() => {
 });
 
 
-// keydown
 
-// const passCode = document.addEventListener('keydown' event =>{
-//     if(event.isComposing || event.keyCode === 831) {
-//         return; 
-//     }
-//     window.alert(YOU JUST BEEN HACKED); 
-// });
+//Propagation //click
 
+const body = document.querySelector('body');
+body.addEventListener('click', (event) => {
+    event.target.style.backgroundColor ='papayawhip';
+});
 
 
-// dbclick
+
+//preventDefault // click
+const navLink = document.querySelector('.nav');
+navLink.addEventListener('click', (event) => {
+    event.target.style.color ='blue'
+    event.preventDefault()
+});
 
 
-const changeImg = 
+
+
+
+
+//load 
+
+
+window.addEventListener("load", (event) => {
+    console.log ('GOOD TO GO')
+});
+
+
+
+//online
+window.addEventListener('online', (event) => {
+    console.log("you are connected to the network!")
+});
+
+
+//keydown
+function logKey(e) {
+    console.log(e)
+
+    if(e.keycode === 93) {
+        alert ('hey that is a command key')
+    }
+};
+
+
+document.addEventListener('keydown' , logKey)
+
+
+//scroll
+const textArea = document.querySelector('textarea')
+textArea.addEventListener('scroll', function(e) {
+  console.log('scrolled', e)
+});
+
+
+//dbclick 
+
+const logo = document.querySelector('.logo-heading h1')
+
+logo.addEventListener('dbclick', function(e) {
+    logo.target.style.color ='red'
+});
